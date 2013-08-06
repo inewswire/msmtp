@@ -26,6 +26,7 @@ dnl Autotools init stuff
 AC_INIT([msmtp], [1.4.31], [marlam@marlam.de], [msmtp], [http://msmtp.sourceforge.net/])
 AC_CONFIG_SRCDIR([src/msmtp.c])
 AC_CONFIG_AUX_DIR([build-aux])
+AC_CONFIG_MACRO_DIR([m4])
 AC_CONFIG_HEADERS([config.h])
 AC_CANONICAL_TARGET
 AC_USE_SYSTEM_EXTENSIONS
@@ -45,7 +46,7 @@ AM_GNU_GETTEXT([external])
 
 dnl Headers and functions
 AC_CHECK_HEADERS([sysexits.h netdb.h arpa/inet.h sys/socket.h sys/wait.h])
-AC_CHECK_FUNCS([fmemopen fseeko fseeko64 getpass getservbyname link mkstemp sigaction strndup syslog vasprintf])
+AC_CHECK_FUNCS([fseeko fseeko64 getpass getservbyname link mkstemp sigaction strndup syslog vasprintf])
 AC_SEARCH_LIBS([nanosleep], [rt posix4])
 AC_SEARCH_LIBS([socket], [socket])
 
